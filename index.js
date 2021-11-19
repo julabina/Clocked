@@ -1,9 +1,13 @@
+const menuBtn = document.getElementById("menuBtn");
+const menuContainer = document.querySelector(".menuContainer");
+const currentBtn = document.getElementById("currentBtn");
+
 const body = document.body;
 let urll;
 
 currentTime = new Date();
 currentDay = currentTime.getDay();
-currentMonth = currentTime.getMonth();
+currentMonth = 6; /* currentTime.getMonth(); */
 currentHour = currentTime.getHours();
 currentMinutes = currentTime.getMinutes();
 currentDate = currentTime.getDate();
@@ -23,60 +27,79 @@ const changeBackground = (url) => {
 
 let rand10 = random(10);
 
-if (currentMonth === 0) {
-  urll = "./winter/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 1) {
-  urll = "./winter/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 2) {
-  if (currentDate > 20) {
-    urll = "./spring/" + rand10 + ".jpg";
-    changeBackground(urll);
-  } else {
+const choseImg = () => {
+  if (currentMonth === 0) {
     urll = "./winter/" + rand10 + ".jpg";
     changeBackground(urll);
-  }
-} else if (currentMonth === 3) {
-  urll = "./spring/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 4) {
-  urll = "./spring/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 5) {
-  if (currentDate > 20) {
-    urll = "./summer/" + rand10 + ".jpg";
-    changeBackground(urll);
-  } else {
-    urll = "./spring/" + rand10 + ".jpg";
-    changeBackground(urll);
-  }
-} else if (currentMonth === 6) {
-  urll = "./summer/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 7) {
-  urll = "./summer/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 8) {
-  if (currentDate > 20) {
-    urll = "./autumn/" + rand10 + ".jpg";
-    changeBackground(urll);
-  } else {
-    urll = "./summer/" + rand10 + ".jpg";
-    changeBackground(urll);
-  }
-} else if (currentMonth === 9) {
-  urll = "./autumn/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 10) {
-  urll = "./autumn/" + rand10 + ".jpg";
-  changeBackground(urll);
-} else if (currentMonth === 11) {
-  if (currentDate > 20) {
+  } else if (currentMonth === 1) {
     urll = "./winter/" + rand10 + ".jpg";
     changeBackground(urll);
-  } else {
+  } else if (currentMonth === 2) {
+    if (currentDate > 20) {
+      urll = "./spring/" + rand10 + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./winter/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
+  } else if (currentMonth === 3) {
+    urll = "./spring/" + rand10 + ".jpg";
+    changeBackground(urll);
+  } else if (currentMonth === 4) {
+    urll = "./spring/" + rand10 + ".jpg";
+    changeBackground(urll);
+  } else if (currentMonth === 5) {
+    if (currentDate > 20) {
+      urll = "./summer/" + rand10 + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./spring/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
+  } else if (currentMonth === 6) {
+    urll = "./summer/" + rand10 + ".jpg";
+    changeBackground(urll);
+  } else if (currentMonth === 7) {
+    urll = "./summer/" + rand10 + ".jpg";
+    changeBackground(urll);
+  } else if (currentMonth === 8) {
+    if (currentDate > 20) {
+      urll = "./autumn/" + rand10 + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./summer/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
+  } else if (currentMonth === 9) {
     urll = "./autumn/" + rand10 + ".jpg";
     changeBackground(urll);
+  } else if (currentMonth === 10) {
+    urll = "./autumn/" + rand10 + ".jpg";
+    changeBackground(urll);
+  } else if (currentMonth === 11) {
+    if (currentDate > 20) {
+      urll = "./winter/" + rand10 + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./autumn/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
   }
-}
+};
+
+choseImg();
+
+menuBtn.addEventListener("click", () => {
+  if (menuContainer.classList.contains("invisible")) {
+    menuContainer.classList.remove("invisible");
+  } else {
+    menuContainer.classList.add("invisible");
+  }
+});
+
+currentBtn.addEventListener("click", () => {
+  console.log(currentMonth);
+  currentDate = currentTime.getDate();
+  currentMonth = currentTime.getMonth();
+  choseImg();
+});

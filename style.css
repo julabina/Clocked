@@ -38,9 +38,67 @@ h1 {
   color: black;
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 1px;
+  z-index: 100;
 }
 
 #menuBtn:hover {
   border: 2px solid black;
   cursor: pointer;
+}
+
+.menuContainer {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  height: auto;
+  width: auto;
+  background: rgba(128, 128, 128, 0.685);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuContainer-container {
+  display: flex;
+  padding: 15px;
+}
+
+.menuContainer-container-selectContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.menuContainer-container-selectContainer label {
+  font-size: 0.9em;
+  margin-bottom: 3px;
+}
+
+.menuContainer-container-selectContainer select {
+  background: initial;
+  border: solid 1px black;
+  border-radius: 3px;
+}
+
+#currentBtn {
+  font-family: "Lemon", cursive;
+  font-size: 1.2em;
+  height: 30px;
+  line-height: 8px;
+  white-space: nowrap;
+  background: initial;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#currentBtn:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.invisible {
+  display: none;
 }
