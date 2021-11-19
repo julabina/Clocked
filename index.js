@@ -1,16 +1,17 @@
 const menuBtn = document.getElementById("menuBtn");
 const menuContainer = document.querySelector(".menuContainer");
 const currentBtn = document.getElementById("currentBtn");
-
+const daySelect = document.getElementById("dayS");
+const monthSelect = document.getElementById("monthS");
 const body = document.body;
 let urll;
 
-currentTime = new Date();
-currentDay = currentTime.getDay();
-currentMonth = 6; /* currentTime.getMonth(); */
-currentHour = currentTime.getHours();
-currentMinutes = currentTime.getMinutes();
-currentDate = currentTime.getDate();
+let currentTime = new Date();
+let currentMonth = currentTime.getMonth();
+let currentDate = currentTime.getDate();
+
+daySelect.value = currentDate;
+monthSelect.value = currentMonth;
 
 function random(a) {
   val = Math.ceil(Math.random() * a);
@@ -25,15 +26,26 @@ const changeBackground = (url) => {
   return (body.style.backgroundImage = "url(" + url + ")");
 };
 
-let rand10 = random(10);
-
 const choseImg = () => {
+  let rand10 = random(10);
   if (currentMonth === 0) {
-    urll = "./winter/" + rand10 + ".jpg";
-    changeBackground(urll);
+    if (currentDate === 1) {
+      let randSpecial = random(5);
+      urll = "./specialDay/newYear/" + randSpecial + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./winter/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
   } else if (currentMonth === 1) {
-    urll = "./winter/" + rand10 + ".jpg";
-    changeBackground(urll);
+    if (currentDate > 28) {
+      daySelect.value = 28;
+      urll = "./winter/" + rand10 + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./winter/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
   } else if (currentMonth === 2) {
     if (currentDate > 20) {
       urll = "./spring/" + rand10 + ".jpg";
@@ -43,15 +55,27 @@ const choseImg = () => {
       changeBackground(urll);
     }
   } else if (currentMonth === 3) {
-    urll = "./spring/" + rand10 + ".jpg";
-    changeBackground(urll);
+    if (currentDate === 31) {
+      daySelect.value = 30;
+      urll = "./spring/" + rand10 + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./spring/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
   } else if (currentMonth === 4) {
     urll = "./spring/" + rand10 + ".jpg";
     changeBackground(urll);
   } else if (currentMonth === 5) {
     if (currentDate > 20) {
-      urll = "./summer/" + rand10 + ".jpg";
-      changeBackground(urll);
+      if (currentDate === 31) {
+        daySelect.value = 30;
+        urll = "./summer/" + rand10 + ".jpg";
+        changeBackground(urll);
+      } else {
+        urll = "./summer/" + rand10 + ".jpg";
+        changeBackground(urll);
+      }
     } else {
       urll = "./spring/" + rand10 + ".jpg";
       changeBackground(urll);
@@ -64,20 +88,42 @@ const choseImg = () => {
     changeBackground(urll);
   } else if (currentMonth === 8) {
     if (currentDate > 20) {
-      urll = "./autumn/" + rand10 + ".jpg";
-      changeBackground(urll);
+      if (currentDate === 31) {
+        daySelect.value = 30;
+        urll = "./autumn/" + rand10 + ".jpg";
+        changeBackground(urll);
+      } else {
+        urll = "./autumn/" + rand10 + ".jpg";
+        changeBackground(urll);
+      }
     } else {
       urll = "./summer/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 9) {
-    urll = "./autumn/" + rand10 + ".jpg";
-    changeBackground(urll);
+    if (currentDate === 31) {
+      let randSpecial = random(5);
+      urll = "./specialDay/halloween/" + randSpecial + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./autumn/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
   } else if (currentMonth === 10) {
-    urll = "./autumn/" + rand10 + ".jpg";
-    changeBackground(urll);
+    if (currentDate === 31) {
+      daySelect.value = 30;
+      urll = "./autumn/" + rand10 + ".jpg";
+      changeBackground(urll);
+    } else {
+      urll = "./autumn/" + rand10 + ".jpg";
+      changeBackground(urll);
+    }
   } else if (currentMonth === 11) {
-    if (currentDate > 20) {
+    if (currentDate === 25) {
+      let randSpecial = random(5);
+      urll = "./specialDay/christmas/" + randSpecial + ".jpg";
+      changeBackground(urll);
+    } else if (currentDate > 20) {
       urll = "./winter/" + rand10 + ".jpg";
       changeBackground(urll);
     } else {
@@ -98,8 +144,19 @@ menuBtn.addEventListener("click", () => {
 });
 
 currentBtn.addEventListener("click", () => {
-  console.log(currentMonth);
   currentDate = currentTime.getDate();
   currentMonth = currentTime.getMonth();
+  choseImg();
+  daySelect.value = currentDate;
+  monthSelect.value = currentMonth;
+});
+
+daySelect.addEventListener("change", () => {
+  currentDate = parseInt(daySelect.value);
+  choseImg();
+});
+
+monthSelect.addEventListener("change", () => {
+  currentMonth = parseInt(monthSelect.value);
   choseImg();
 });

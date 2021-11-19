@@ -11,7 +11,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: rgba(128, 128, 128, 0.308);
+  background-color: rgba(36, 106, 197, 0.24);
   font-family: "Lemon", cursive;
 }
 
@@ -48,11 +48,11 @@ h1 {
 
 .menuContainer {
   position: fixed;
-  top: 8px;
-  right: 8px;
+  top: 5px;
+  right: 5px;
   height: auto;
   width: auto;
-  background: rgba(128, 128, 128, 0.685);
+  background: rgba(128, 128, 128, 0.308);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
