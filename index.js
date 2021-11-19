@@ -21,33 +21,62 @@ const changeBackground = (url) => {
   return (body.style.backgroundImage = "url(" + url + ")");
 };
 
+let rand10 = random(10);
+
 if (currentMonth === 0) {
+  urll = "./winter/" + rand10 + ".jpg";
+  changeBackground(urll);
 } else if (currentMonth === 1) {
+  urll = "./winter/" + rand10 + ".jpg";
+  changeBackground(urll);
 } else if (currentMonth === 2) {
   if (currentDate > 20) {
+    urll = "./spring/" + rand10 + ".jpg";
+    changeBackground(urll);
   } else {
+    urll = "./winter/" + rand10 + ".jpg";
+    changeBackground(urll);
   }
 } else if (currentMonth === 3) {
+  urll = "./spring/" + rand10 + ".jpg";
+  changeBackground(urll);
 } else if (currentMonth === 4) {
+  urll = "./spring/" + rand10 + ".jpg";
+  changeBackground(urll);
 } else if (currentMonth === 5) {
   if (currentDate > 20) {
+    urll = "./summer/" + rand10 + ".jpg";
+    changeBackground(urll);
   } else {
+    urll = "./spring/" + rand10 + ".jpg";
+    changeBackground(urll);
   }
 } else if (currentMonth === 6) {
+  urll = "./summer/" + rand10 + ".jpg";
+  changeBackground(urll);
 } else if (currentMonth === 7) {
+  urll = "./summer/" + rand10 + ".jpg";
+  changeBackground(urll);
 } else if (currentMonth === 8) {
   if (currentDate > 20) {
+    urll = "./autumn/" + rand10 + ".jpg";
+    changeBackground(urll);
   } else {
+    urll = "./summer/" + rand10 + ".jpg";
+    changeBackground(urll);
   }
 } else if (currentMonth === 9) {
+  urll = "./autumn/" + rand10 + ".jpg";
+  changeBackground(urll);
 } else if (currentMonth === 10) {
-  console.log("test");
-  b = random(10);
-  console.log(b);
-  urll = "./autumn/" + b + ".jpg";
+  urll = "./autumn/" + rand10 + ".jpg";
   changeBackground(urll);
 } else if (currentMonth === 11) {
   if (currentDate > 20) {
+    urll = "./winter/" + rand10 + ".jpg";
+    changeBackground(urll);
   } else {
+    urll = "./autumn/" + rand10 + ".jpg";
+    changeBackground(urll);
   }
 }
