@@ -31,103 +31,103 @@ const choseImg = () => {
   if (currentMonth === 0) {
     if (currentDate === 1) {
       let randSpecial = random(5);
-      urll = "./specialDay/newYear/" + randSpecial + ".jpg";
+      urll = "./assets/specialDay/newYear/" + randSpecial + ".jpg";
       changeBackground(urll);
     } else {
-      urll = "./winter/" + rand10 + ".jpg";
+      urll = "./assets/winter/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 1) {
     if (currentDate > 28) {
       daySelect.value = 28;
-      urll = "./winter/" + rand10 + ".jpg";
+      urll = "./assets/winter/" + rand10 + ".jpg";
       changeBackground(urll);
     } else {
-      urll = "./winter/" + rand10 + ".jpg";
+      urll = "./assets/winter/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 2) {
     if (currentDate > 20) {
-      urll = "./spring/" + rand10 + ".jpg";
+      urll = "./assets/spring/" + rand10 + ".jpg";
       changeBackground(urll);
     } else {
-      urll = "./winter/" + rand10 + ".jpg";
+      urll = "./assets/winter/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 3) {
     if (currentDate === 31) {
       daySelect.value = 30;
-      urll = "./spring/" + rand10 + ".jpg";
+      urll = "./assets/spring/" + rand10 + ".jpg";
       changeBackground(urll);
     } else {
-      urll = "./spring/" + rand10 + ".jpg";
+      urll = "./assets/spring/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 4) {
-    urll = "./spring/" + rand10 + ".jpg";
+    urll = "./assets/spring/" + rand10 + ".jpg";
     changeBackground(urll);
   } else if (currentMonth === 5) {
     if (currentDate > 20) {
       if (currentDate === 31) {
         daySelect.value = 30;
-        urll = "./summer/" + rand10 + ".jpg";
+        urll = "./assets/summer/" + rand10 + ".jpg";
         changeBackground(urll);
       } else {
-        urll = "./summer/" + rand10 + ".jpg";
+        urll = "./assets/summer/" + rand10 + ".jpg";
         changeBackground(urll);
       }
     } else {
-      urll = "./spring/" + rand10 + ".jpg";
+      urll = "./assets/spring/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 6) {
-    urll = "./summer/" + rand10 + ".jpg";
+    urll = "./assets/summer/" + rand10 + ".jpg";
     changeBackground(urll);
   } else if (currentMonth === 7) {
-    urll = "./summer/" + rand10 + ".jpg";
+    urll = "./assets/summer/" + rand10 + ".jpg";
     changeBackground(urll);
   } else if (currentMonth === 8) {
     if (currentDate > 20) {
       if (currentDate === 31) {
         daySelect.value = 30;
-        urll = "./autumn/" + rand10 + ".jpg";
+        urll = "./assets/autumn/" + rand10 + ".jpg";
         changeBackground(urll);
       } else {
-        urll = "./autumn/" + rand10 + ".jpg";
+        urll = "./assets/autumn/" + rand10 + ".jpg";
         changeBackground(urll);
       }
     } else {
-      urll = "./summer/" + rand10 + ".jpg";
+      urll = "./assets/summer/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 9) {
     if (currentDate === 31) {
       let randSpecial = random(5);
-      urll = "./specialDay/halloween/" + randSpecial + ".jpg";
+      urll = "./assets/specialDay/halloween/" + randSpecial + ".jpg";
       changeBackground(urll);
     } else {
-      urll = "./autumn/" + rand10 + ".jpg";
+      urll = "./assets/autumn/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 10) {
     if (currentDate === 31) {
       daySelect.value = 30;
-      urll = "./autumn/" + rand10 + ".jpg";
+      urll = "./assets/autumn/" + rand10 + ".jpg";
       changeBackground(urll);
     } else {
-      urll = "./autumn/" + rand10 + ".jpg";
+      urll = "./assets/autumn/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   } else if (currentMonth === 11) {
     if (currentDate === 25) {
       let randSpecial = random(5);
-      urll = "./specialDay/christmas/" + randSpecial + ".jpg";
+      urll = "./assets/specialDay/christmas/" + randSpecial + ".jpg";
       changeBackground(urll);
     } else if (currentDate > 20) {
-      urll = "./winter/" + rand10 + ".jpg";
+      urll = "./assets/winter/" + rand10 + ".jpg";
       changeBackground(urll);
     } else {
-      urll = "./autumn/" + rand10 + ".jpg";
+      urll = "./assets/autumn/" + rand10 + ".jpg";
       changeBackground(urll);
     }
   }
