@@ -2,7 +2,7 @@
 
 The background changes with the seasons. 
 
-<https://julabina.github.io/Clocked/>
+Link to live site [Clocked](https://julabina.github.io/Clocked/)
 
 ![](./assets/screenshot1.webp)
 
