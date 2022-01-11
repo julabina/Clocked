@@ -31,7 +31,7 @@ const choseImg = () => {
   if (currentMonth === 0) {
     if (currentDate === 1) {
       let randSpecial = random(5);
-      urll = "./assets/specialDay/newYear/" + randSpecial + ".jpg";
+      urll = "./assets/specialDay/newYear/" + randSpecial + ".webp";
       changeBackground(urll);
     } else {
       urll = "./assets/winter/" + rand10 + ".webp";
@@ -138,7 +138,6 @@ choseImg();
 const preloadImg = (url) => {
   const img = new Image();
   img.src = url;
-  console.log("test");
   return img;
 };
 
